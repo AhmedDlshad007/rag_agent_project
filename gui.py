@@ -31,8 +31,8 @@ DARK_THEME = {
 
 
 # API Keys
-TMDB_API_KEY = "876262812143a500c36b773ee79778dc"  # Replace with your TMDb API key
-OMDB_API_KEY = "4e61bc43"  # Replace with your OMDb API key
+TMDB_API_KEY = "876262812143a500c36b773ee79778dc" 
+OMDB_API_KEY = "4e61bc43"  
 
 # Fetch genre list from TMDb
 def fetch_tmdb_genres():
@@ -51,7 +51,7 @@ def search_movie_info(movie_name):
         "q": f"{movie_name} movie IMDb page",
         "hl": "en",
         "gl": "us",
-        "api_key": "0818658513070eceb6a18e7df7e462715694ca06a229b8a95f83290e503c6b93"  # Replace with your SerpAPI key
+        "api_key": "0818658513070eceb6a18e7df7e462715694ca06a229b8a95f83290e503c6b93"  
     }
 
     search = GoogleSearch(params)
@@ -288,7 +288,7 @@ class MovieSearchApp:
     import io
 
     def search_movie(self):
-        movie_name = self.movie_entry.get().strip()  # Use self.movie_entry instead of self.entry
+        movie_name = self.movie_entry.get().strip()  
 
         if not movie_name:
             self.session_log.insert(tk.END, "Please enter a movie name.\n")
@@ -298,7 +298,7 @@ class MovieSearchApp:
         self.session_log.insert(tk.END, f"Searching for movie: {movie_name}\n")
 
         # Fetch movie details
-        output, poster_url = search_movie_info(movie_name)  # Assuming search_movie_info returns output and poster_url
+        output, poster_url = search_movie_info(movie_name)  
         print(f"Poster URL in search_movie: {poster_url}")  # Debug: Print poster URL
 
         # Display movie details in the results text area
@@ -388,11 +388,11 @@ class MovieSearchApp:
         favorites_text = scrolledtext.ScrolledText(favorites_window, wrap=tk.WORD, width=100, height=25, font=self.text_font, bg="#ffffff", fg="#333333")
         favorites_text.pack(pady=20, padx=20)
 
-        # Add a "Delete Favorite" button
+        #"Delete Favorite" button
         delete_button = tk.Button(favorites_window, text="Delete Selected Favorite", font=self.button_font, bg="#FF5252", fg="white", command=lambda: self.delete_favorite(favorites_window, favorites_text))
         delete_button.pack(pady=10)
 
-    # Display favorites
+        # Display favorites
         for movie_name, details in self.favorites.items():
             favorites_text.insert(tk.END, f"Movie: {movie_name}\n")
             favorites_text.insert(tk.END, f"Details:\n{details}\n")

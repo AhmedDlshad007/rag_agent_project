@@ -6,8 +6,8 @@ import json
 import re
 
 # API Keys
-TMDB_API_KEY = "876262812143a500c36b773ee79778dc"  # Replace with your TMDb API key
-OMDB_API_KEY = "4e61bc43"  # Replace with your OMDb API key
+TMDB_API_KEY = "876262812143a500c36b773ee79778dc"  
+OMDB_API_KEY = "4e61bc43"  
 
 # Fetch genre list from TMDb
 def fetch_tmdb_genres():
@@ -25,7 +25,7 @@ def search_movie_info(movie_name):
         "q": f"{movie_name} movie IMDb page",
         "hl": "en",
         "gl": "us",
-        "api_key": "0818658513070eceb6a18e7df7e462715694ca06a229b8a95f83290e503c6b93"  # Replace with your SerpAPI key
+        "api_key": "0818658513070eceb6a18e7df7e462715694ca06a229b8a95f83290e503c6b93" 
     }
 
     search = GoogleSearch(params)
